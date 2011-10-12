@@ -269,8 +269,11 @@
         var result_container = $(options.resultsContainer);
 
         if(result_container){
-         //clear previous results
-         options.clearResults(); 
+					//clear previous results
+					options.clearResults(); 
+
+	        //hide the results container to allow free form entry without interference
+	        result_container.hide();
         }
 
       }
@@ -289,7 +292,7 @@
         //get the text from selected item
         var selected_value = $(selected_item).text() || $(selected_item).val();
         //set it as the value of the autocomplete field
-        $(context).val(selected_value); 
+        $(context).val(selected_value);
 
         //set item selected property
         options.setItemSelected(true);
